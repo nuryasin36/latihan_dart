@@ -1,18 +1,23 @@
-import 'package:tugas1/tugas1.dart' as tugas1;
+/// Library agar bisa menggunakan input
 import 'dart:io';
 
 void main() {
+  /// Menampilkan hasil
   print("Luas lingkaran adalah ${hitungLuas()}");
 }
 
 num hitungLuas() {
-  double phi1 = 3.14;
-  double phi2 = 22 / 7;
-  double? r = double.parse(stdin.readLineSync()!);
+  /// Variabel konstanta dan input
+  final phi1 = 3.14;
+  final phi2 = 22 / 7;
+  double? jariJari = double.parse(stdin.readLineSync()!);
 
-  if (r % 7 == 0) {
-    return phi2 * r * r;
+  /// Logic untuk pengecekan konstanta phi yang digunakan
+  if (jariJari % 7 == 0) {
+    /// Menghasilkan hasil bulat, 
+    return (phi2 * jariJari * jariJari).toInt();
   } else {
-    return phi1 * r * r;
+    /// Menghasilkan hasil desimal, kecuali kelipatan 10
+    return phi1 * jariJari * jariJari;
   }
 }
